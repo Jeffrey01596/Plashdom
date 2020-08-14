@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Plashdom</string>
+    <string name="set_wallpaper">Установть обои</string>
+    <string name="reload_image">Обновить</string>
+    <string name="applied">Применено!</string>
+    <string name="about_app">О приложении</string>
+    <string name="about_title">О приложении</string>
+    <string name="description_app_subtitle">Описание</string>
+    <string name="description_app_title">Простое приложение для получения случайных обоев из Unsplash®</string>
+    <string name="information_subtitle">Информация</string>
+    <string name="information_title">Библиотеки</string>
+    <string name="developer_subtitle">Разработчик</string>
+    <string name="main_developer_description"><![CDATA[Ведущий дизайнер и разработчик]]></string>
+    <string name="developer_website">Сайт разработчика</string>
+    <string name="libraries_title">Используемые библиотеки</string>
+</resources>

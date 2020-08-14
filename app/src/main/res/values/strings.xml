@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Plashdom</string>
+    <string name="set_wallpaper">Set wallpaper</string>
+    <string name="reload_image">Reload</string>
+    <string name="applied">Applied!</string>
+    <string name="about_app">About</string>
+    <string name="about_title">About</string>
+    <string name="description_app_subtitle">Description</string>
+    <string name="description_app_title">A simple app for get Unsplash® random wallpapers</string>
+    <string name="information_subtitle">Information</string>
+    <string name="information_title">Libraries</string>
+    <string name="developer_subtitle">Developer</string>
+    <string name="main_developer_description"><![CDATA[Lead designer & developer]]></string>
+    <string name="developer_website">Developer website</string>
+    <string name="libraries_title">Libraries used</string>
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorElevationBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            app:titleTextColor="@color/colorAccent"
+            app:title="@string/app_name"
+            app:menu="@menu/main_menu"
+            app:logo="@drawable/ic_plashdom_product_24dp"
+            app:titleTextAppearance="@style/TextAppearance.Plashdom.Toolbar"
+            android:elevation="@dimen/card_elevation"/>
+
+        <View
+            android:layout_gravity="top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="?colorDivider"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:paddingTop="@dimen/large_margin"
+        android:layout_marginTop="?actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:scaleType="fitStart"
+            android:id="@+id/random_picture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null" />
+
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        style="@style/TextAppearance.Plashdom.ExtendedFAB"
+        android:id="@+id/set_wallpaper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_margin="@dimen/large_margin"
+        android:text="@string/set_wallpaper"
+        android:backgroundTint="?android:attr/colorAccent"
+        app:icon="@drawable/ic_image_24dp" />
+
+    <View
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="?colorDivider"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

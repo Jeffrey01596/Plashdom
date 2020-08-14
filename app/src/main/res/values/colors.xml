@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorAccent</color>
+    <color name="colorPrimaryDark">@color/colorAccent</color>
+    <color name="colorAccent">#43a047</color>
+
+    <color name="colorAccent20Alpha">#3343a047</color>
+
+    <color name="colorMainDevAccent">#FF5722</color>
+    <color name="colorGithubBackground">#24292e</color>
+</resources>
