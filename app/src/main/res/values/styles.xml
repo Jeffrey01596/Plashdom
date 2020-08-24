@@ -29,4 +29,15 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="TextAppearance.Plashdom.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/raleway_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="Widget.Plashdom.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">20dp</item>
+        <item name="fontFamily">@font/raleway_medium</item>
+    </style>
+
 </resources>

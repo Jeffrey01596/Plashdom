@@ -4,13 +4,19 @@
 
     <item
         android:id="@+id/reload_image"
-        android:icon="@drawable/ic_update_24dp"
+        android:icon="@drawable/ic_pld_reload_24dp"
         android:title="@string/reload_image"
         app:showAsAction="ifRoom"/>
 
     <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_pld_settings_24dp"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom"/>
+
+    <item
         android:id="@+id/about_app"
-        android:icon="@drawable/ic_info_primary_24dp"
+        android:icon="@drawable/ic_pld_info_accent_24dp"
         android:title="@string/about_app"
         app:showAsAction="ifRoom"/>
 

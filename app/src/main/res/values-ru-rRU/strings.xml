@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Plashdom</string>
-    <string name="set_wallpaper">Установть обои</string>
+    <string name="set_wallpaper">Установить обои</string>
     <string name="reload_image">Обновить</string>
     <string name="applied">Применено!</string>
     <string name="about_app">О приложении</string>
@@ -14,4 +14,14 @@
     <string name="main_developer_description"><![CDATA[Ведущий дизайнер и разработчик]]></string>
     <string name="developer_website">Сайт разработчика</string>
     <string name="libraries_title">Используемые библиотеки</string>
+    <string name="settings">Настройки</string>
+    <string name="settings_title">Настройки</string>
+    <string name="size_title">Размер изображения</string>
+    <string name="size_summary">Ширина и высота случайного изображения</string>
+    <string name="size_title_dialog">Установите размер изображения</string>
+    <string name="image_height">Высота</string>
+    <string name="image_width">Ширина</string>
+    <string name="no_connection_header">Соединение потеряно</string>
+    <string name="no_connection_message">Ваша сеть недоступна. Проверьте мобильные данные или wifi соединение.</string>
+    <string name="no_connection_button">повторить</string>
 </resources>

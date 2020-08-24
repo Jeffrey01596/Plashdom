@@ -20,7 +20,7 @@
             app:titleTextColor="@color/colorAccent"
             app:titleTextAppearance="@style/TextAppearance.Plashdom.Toolbar"
             app:title="@string/about_title"
-            app:navigationIcon="@drawable/ic_arrow_back_24dp"
+            app:navigationIcon="@drawable/ic_pld_arrow_back_24dp"
             android:elevation="@dimen/card_elevation"/>
 
     </LinearLayout>
@@ -37,7 +37,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:background="@drawable/about_top_gradient"
+                android:background="@drawable/chart_gradient"
                 android:gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:paddingTop="50dp"
@@ -73,7 +73,7 @@
                 android:textSize="14sp"
                 android:clickable="true"
                 android:focusable="true"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="@drawable/rounded_ripple"
                 android:textColor="?android:attr/colorAccent"
                 android:fontFamily="@font/raleway_medium" />
 
@@ -120,7 +120,7 @@
                         android:layout_marginBottom="@dimen/large_margin"
                         android:drawablePadding="@dimen/large_margin"
                         android:text="@string/description_app_title"
-                        app:drawableStartCompat="@drawable/ic_info_secondary_24dp" />
+                        app:drawableStartCompat="@drawable/ic_pld_info_24dp" />
 
                 </LinearLayout>
 
@@ -157,11 +157,11 @@
                         android:layout_height="match_parent"
                         android:padding="@dimen/large_margin"
                         android:drawablePadding="@dimen/large_margin"
-                        android:background="?android:attr/selectableItemBackground"
+                        android:background="@drawable/rounded_ripple"
                         android:clickable="true"
                         android:focusable="true"
                         android:text="@string/information_title"
-                        app:drawableStartCompat="@drawable/ic_local_library_secondary_24dp" />
+                        app:drawableStartCompat="@drawable/ic_pld_library_24dp" />
 
                 </LinearLayout>
 
@@ -260,11 +260,11 @@
                         android:layout_height="match_parent"
                         android:padding="@dimen/large_margin"
                         android:drawablePadding="@dimen/large_margin"
-                        android:background="?android:attr/selectableItemBackground"
+                        android:background="@drawable/rounded_ripple"
                         android:clickable="true"
                         android:focusable="true"
                         android:text="@string/developer_website"
-                        app:drawableStartCompat="@drawable/ic_website_secondary_24dp" />
+                        app:drawableStartCompat="@drawable/ic_pld_website_24dp" />
 
                 </LinearLayout>
 

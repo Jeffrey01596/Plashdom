@@ -1,6 +1,7 @@
 package com.jeffrey.plashdom.Util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 
 import androidx.annotation.ColorRes;
@@ -16,5 +17,10 @@ public class Utils {
         builder.addDefaultShareMenuItem();
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(context, Uri.parse(url));
+    }
+
+    public static void startActivity(Context context, Class cls) {
+        Intent i = new Intent(context, cls);
+        context.startActivity(i);
     }
 }

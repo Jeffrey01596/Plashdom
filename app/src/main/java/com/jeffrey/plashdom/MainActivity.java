@@ -1,10 +1,12 @@
 package com.jeffrey.plashdom;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import android.app.WallpaperManager;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,7 +15,9 @@ import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.jeffrey.plashdom.Util.Constants;
+import com.jeffrey.plashdom.Util.Utils;
 import com.jeffrey.plashdom.databinding.ActivityMainBinding;
+import com.jeffrey.plashdom.service.InternetConnectionService;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
@@ -34,17 +38,23 @@ public class MainActivity extends AppCompatActivity {
 
         setUpToolbar();
         loadPicture();
+        checkConnection();
 
-        binding.setWallpaper.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setPictureAsWallpaper();
-            }
+        binding.NoInternetButton.setOnClickListener(v -> {
+            checkConnection();
+            loadPicture();
         });
+
+        binding.setWallpaper.setOnClickListener(v -> setPictureAsWallpaper());
     }
 
     public void loadPicture() {
-        Picasso.get().load(Constants.mainApi).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE).into(binding.randomPicture);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String width = prefs.getString("width", "1080");
+        String height = prefs.getString("height", "2000");
+        String final_size = width + "x" + height;
+        String final_url = Constants.mainApi + final_size;
+        Picasso.get().load(final_url).networkPolicy(NetworkPolicy.NO_CACHE).memoryPolicy(MemoryPolicy.NO_CACHE).into(binding.randomPicture);
     }
 
     public void setPictureAsWallpaper() {
@@ -53,13 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             binding.randomPicture.setDrawingCacheEnabled(true);
-            binding.randomPicture.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
-                    View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-            binding.randomPicture.layout(0, 0,
-                    binding.randomPicture.getMeasuredWidth(), binding.randomPicture.getMeasuredHeight());
-            binding.randomPicture.buildDrawingCache(true);
-            Bitmap bitmap = Bitmap.createBitmap(binding.randomPicture.getDrawingCache());
-            binding.randomPicture.setDrawingCacheEnabled(false);
+            Bitmap bitmap = ((BitmapDrawable)binding.randomPicture.getDrawable()).getBitmap();
             m.setBitmap(bitmap);
             Snackbar.make(binding.setWallpaper, R.string.applied, Snackbar.LENGTH_SHORT)
                     .show();
@@ -79,10 +83,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.reload_image) {
             loadPicture();
+            checkConnection();
             return true;
         } if (item.getItemId() == R.id.about_app) {
-            startAboutActivity();
+            Utils.startActivity(this, AboutActivity.class);
             return true;
+        } if (item.getItemId() == R.id.settings) {
+            Utils.startActivity(this, PreferencesActivity.class);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -92,8 +99,13 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
     }
 
-    public void startAboutActivity() {
-        Intent i = new Intent(this, AboutActivity.class);
-        this.startActivity(i);
+    public void checkConnection() {
+        if (InternetConnectionService.checkConnection(this)) {
+            binding.setWallpaper.setVisibility(View.VISIBLE);
+            binding.noConnectionOnboarding.setVisibility(View.GONE);
+        } else {
+            binding.setWallpaper.setVisibility(View.GONE);
+            binding.noConnectionOnboarding.setVisibility(View.VISIBLE);
+        }
     }
 }
